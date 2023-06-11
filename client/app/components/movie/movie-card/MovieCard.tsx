@@ -40,7 +40,10 @@ export const MovieCardComponent: FC<IMovieCardProps> = ({
 								size='1xl'
 								onClick={() => {
 									activeHandler()
-									stateHandler(item.source ? item.source : '')
+									stateHandler(
+										item.source ? item.source : '',
+										item?.poster ? item?.poster : ''
+									)
 								}}
 							/>
 							<button className={styles.movies_card__notify}>

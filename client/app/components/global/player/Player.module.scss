@@ -11,6 +11,7 @@
 	opacity: 0;
 	transition: opacity 0.3s cubic-bezier(0.34, 0.43, 0.85, 0.2);
 	z-index: -1;
+	overflow: scroll;
 	&.active {
 		opacity: 1;
 		z-index: 200;
@@ -34,18 +35,70 @@
 		font-size: 12px;
 		cursor: pointer;
 	}
-	&_video {
+}
+.video {
+	position: relative;
+	width: 60%;
+	height: 400px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	& video {
 		position: relative;
-		height: 400px;
-		margin-top: 30px;
-		& video {
-			position: absolute;
-			top: 0;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 60%;
+		height: 100%;
+		object-fit: fill;
+	}
+
+	&__poster {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60%;
+		height: 100%;
+		z-index: 1;
+		& img {
+			width: 100%;
 			height: 100%;
-			object-fit: fill;
+			object-fit: cover;
 		}
+	}
+	&_panel {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: 20px 10px;
+	}
+	&_buttons {
+		& button {
+			background: none;
+			border: none;
+			cursor: pointer;
+			& svg {
+				width: 15px;
+				height: 15px;
+			}
+		}
+	}
+	&_progress {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background: $white;
+	}
+	&_duration {
+		color: $white;
+	}
+	&_actions {
+		display: flex;
+		align-items: center;
+		gap: 12px;
 	}
 }

@@ -22,7 +22,30 @@ export const ButtonComponent: FC<IButtonProps> = ({
 				</button>
 			)
 		case 'pause':
-			return <button {...props} {...props} className={styles.button}></button>
+			return (
+				<button
+					{...props}
+					className={classNames(styles.button, {
+						[styles.button_purple]: color === 'purple',
+						[styles.button_white]: color === 'white',
+						[styles.button_black]: color === 'black',
+						[styles.button_2xl]: size === '2xl',
+						[styles.button_3xl]: size === '3xl',
+						[styles.button_4xl]: size === '4xl',
+					})}
+				>
+					<svg
+						width='7'
+						height='14'
+						viewBox='0 0 7 14'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'
+					>
+						<rect x='4.4707' width='2.47059' height='14' fill='white' />
+						<rect width='2.47059' height='14' fill='white' />
+					</svg>
+				</button>
+			)
 		case 'play':
 			return (
 				<button
