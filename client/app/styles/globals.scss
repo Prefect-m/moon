@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Rambla&display=swap');
+@import './_reset';
+@import './_vars';
+@import './_mixins';
+
+.container {
+	@include container;
+}
+section {
+	padding: 50px 0;
+}

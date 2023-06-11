@@ -1,0 +1,43 @@
+@import '../../../styles/_mixins';
+@import '../../../styles/_vars';
+.title {
+	&_large {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 54px;
+		line-height: 63px;
+	}
+	&_largex {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 28px;
+	}
+	&_medium {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 21px;
+	}
+	&_small {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 16px;
+	}
+	&_default {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 42px;
+	}
+}
+
+.subtitle {
+	display: block;
+	margin-top: 4px;
+	margin-left: 3px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 14px;
+}

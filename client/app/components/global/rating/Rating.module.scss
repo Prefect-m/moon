@@ -1,0 +1,21 @@
+@import '../../../styles/_mixins';
+@import '../../../styles/_vars';
+.rating {
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: $white;
+	z-index: 1;
+	@include numberFont;
+	background: $mainBlack;
+	padding: 2px;
+	border-radius: 1px;
+	& img {
+		width: 31px;
+		height: 16px;
+		object-fit: cover;
+	}
+}
