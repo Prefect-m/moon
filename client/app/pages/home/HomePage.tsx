@@ -1,6 +1,7 @@
 'use client'
 import {
 	ButtonComponent,
+	ExtendSearchComponent,
 	MainSlider,
 	MovieCardComponent,
 	NewMovieComponent,
@@ -178,6 +179,9 @@ export const HomePage: FC = () => {
 			</section>
 			<section className='container'>
 				<NewMovieComponent />
+			</section>
+			<section className='container'>
+				<ExtendSearchComponent />
 			</section>
 		</>
 	)

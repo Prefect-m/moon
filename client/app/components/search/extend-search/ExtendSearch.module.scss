@@ -1,0 +1,30 @@
+@import '../../../styles/_mixins';
+@import '../../../styles/_vars';
+.search {
+	&_wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+	&_options {
+		display: flex;
+		gap: 20px;
+		&__item {
+			& span {
+				font-size: 12px;
+				font-weight: bold;
+			}
+			& select {
+				background: none;
+				border: none;
+				padding: 5px;
+				text-transform: capitalize;
+				& option {
+				}
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+	}
+}

@@ -2,69 +2,69 @@
 @import '../../../styles/_vars';
 
 .player {
-	position: fixed;
-	top: 0;
-	left: 0;
+	position: relative;
 	width: 100%;
 	height: 100%;
-	background: rgba(14, 14, 14, 0.998);
-	opacity: 0;
-	transition: opacity 0.3s cubic-bezier(0.34, 0.43, 0.85, 0.2);
-	z-index: -1;
-	overflow: scroll;
-	&.active {
-		opacity: 1;
-		z-index: 200;
-	}
-	&_wrap {
-		@include container;
-		padding-top: 90px;
-	}
-	&_top {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	&_close {
-		display: flex;
-		align-items: center;
-		gap: 4px;
-		text-transform: uppercase;
-		color: $grey;
-		font-weight: bold;
-		font-size: 12px;
-		cursor: pointer;
-	}
-}
-.video {
-	position: relative;
-	width: 60%;
-	height: 400px;
-	margin-top: 30px;
-	margin-left: auto;
-	margin-right: auto;
+	user-select: none;
 	overflow: hidden;
+	&_poster {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+		pointer-events: none;
+		background-size: cover;
+		background-repeat: no-repeat;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.3);
+		}
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		text-transform: uppercase;
+		font-family: Georgia, 'Times New Roman', Times, serif;
+	}
+	&_rewindWrapp {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		z-index: 3;
+		pointer-events: none;
+	}
+
+	&_rewind {
+		width: 25%;
+		height: 100%;
+		pointer-events: all;
+	}
 	& video {
-		position: relative;
+		width: 100%;
 		height: 100%;
 		object-fit: fill;
 	}
-
-	&__poster {
+	& span {
 		position: absolute;
-		top: 0;
+		top: 50%;
 		left: 50%;
-		transform: translateX(-50%);
-		width: 60%;
-		height: 100%;
-		z-index: 1;
-		& img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
+		transform: translate(-50%, -50%);
+		z-index: 100;
+		color: red;
 	}
-	&_panel {
+	&_controls {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -72,33 +72,23 @@
 		left: 0;
 		bottom: 0;
 		width: 100%;
-		padding: 20px 10px;
-	}
-	&_buttons {
-		& button {
-			background: none;
-			border: none;
-			cursor: pointer;
-			& svg {
-				width: 15px;
-				height: 15px;
-			}
+		padding: 30px 20px;
+		opacity: 0;
+		transition: opacity 0.4s ease;
+		z-index: 4;
+		&:hover {
+			opacity: 1;
 		}
 	}
-	&_progress {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 1px;
-		background: $white;
+	&:hover {
+		& .player_controls {
+			opacity: 1;
+		}
 	}
-	&_duration {
-		color: $white;
-	}
-	&_actions {
-		display: flex;
-		align-items: center;
-		gap: 12px;
+}
+
+.quality {
+	& option {
+		color: #000;
 	}
 }

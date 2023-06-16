@@ -1,6 +1,10 @@
 import { Metadata } from 'next'
 import { Raleway } from 'next/font/google'
-import { IconsComponent, NavbarComponent, PlayerComponent } from './components'
+import {
+	IconsComponent,
+	NavbarComponent,
+	PlayPanelComponent,
+} from './components'
 import { PlayerContextProvider } from './context/Player.context'
 import './styles/globals.scss'
 const raleway = Raleway({
@@ -34,7 +38,7 @@ export default function RootLayout({
 			<body className={raleway.className}>
 				<NavbarComponent />
 				<PlayerContextProvider>
-					<PlayerComponent />
+					<PlayPanelComponent />
 					{children}
 				</PlayerContextProvider>
 			</body>

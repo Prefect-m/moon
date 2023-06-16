@@ -4,6 +4,7 @@ export interface IMovie {
 	genre: string
 	sesons?: string
 	poster?: string
+	overlayPoster?: string
 	rating: number
 	source?: string
 }
