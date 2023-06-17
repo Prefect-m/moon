@@ -5,7 +5,7 @@ import { TitleCompoent } from '../../global/title/Title'
 import { MovieSearchSlider } from '@/components'
 import { IMovie } from '@/app/interfaces/movie.interface'
 
-export const ExtendSearchComponent = () => {
+export const ExtendSearchComponent: FC = () => {
 	const movies: IMovie[] = [
 		{
 			id: 1,
@@ -83,29 +83,39 @@ export const ExtendSearchComponent = () => {
 			<div className={styles.search}>
 				<div className={styles.search_wrap}>
 					<div className={styles.search_options}>
-						<div className={styles.search_options__item}>
+						<div className={styles.search_choice}>
 							<span>Выберите жанр</span>
-							<select name='jenre'>
-								<option value='боевик'>боевик</option>
-							</select>
+							<div className={styles.search_choice__item}>
+								<select name='jenre'>
+									<option value='боевик'>боевик</option>
+									<option value='исторический'>исторический</option>
+									<option value='драма'>драма</option>
+									<option value='фентези'>фентези</option>
+								</select>
+							</div>
 						</div>
-						<div className={styles.search_options__item}>
+						<div className={styles.search_choice}>
 							<span>выберите год</span>
-							<select name='jenre'>
-								<option value='2023'>2023</option>
-								<option value='2023'>2022</option>
-								<option value='2023'>2020</option>
-								<option value='2023'>2019</option>
-							</select>
+							<div className={styles.search_choice__item}>
+								<select name='jenre'>
+									<option value='2023'>2023</option>
+									<option value='2022'>2022</option>
+									<option value='2020'>2020</option>
+									<option value='2019'>2019</option>
+									<option value='2018'>2018</option>
+									<option value='2017'>2017</option>
+									<option value='2016'>2016</option>
+								</select>
+							</div>
 						</div>
-						<div className={styles.search_options__item}>
-							<span>выберите качество видео</span>
-							<select name='jenre'>
-								<option value='360p'>360p</option>
-								<option value='440p'>440p</option>
-								<option value='720p'>720p</option>
-								<option value='1080p'>1080p</option>
-							</select>
+						<div className={styles.search_choice}>
+							<span>Сортировка по</span>
+							<div className={styles.search_choice__item}>
+								<select name='jenre'>
+									<option value='просмотров'>просмотров</option>
+									<option value='рейтингу IMDB'>рейтингу IMDB</option>
+								</select>
+							</div>
 						</div>
 					</div>
 					<MovieSearchSlider movies={movies} />

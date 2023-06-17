@@ -1,7 +1,11 @@
+'use client'
 import { FC } from 'react'
 import styles from './Navbar.module.scss'
+import { useMenuNavigationContext } from '@/app/hooks'
+import classNames from 'classnames'
 
 export const NavbarComponent: FC = () => {
+	const { openCloseHandler, isOpen } = useMenuNavigationContext()
 	return (
 		<div className={styles.navbar}>
 			<div className={styles.navbar_wrapp}>
@@ -42,31 +46,16 @@ export const NavbarComponent: FC = () => {
 							/>
 						</svg>
 					</div>
-					<div className={styles.menu}>
-						<svg
-							width='19'
-							height='13'
-							viewBox='0 0 19 13'
-							fill='none'
-							xmlns='http://www.w3.org/2000/svg'
-						>
-							<rect width='19' height='2.58824' rx='1.29412' fill='#ACACAC' />
-							<rect
-								y='5.17647'
-								width='19'
-								height='2.58824'
-								rx='1.29412'
-								fill='#ACACAC'
-							/>
-							<rect
-								y='10.3529'
-								width='19'
-								height='2.58824'
-								rx='1.29412'
-								fill='#ACACAC'
-							/>
-						</svg>
-						<span>menu</span>
+					<div
+						className={classNames(styles.menu, { [styles.active]: isOpen })}
+						onClick={openCloseHandler}
+					>
+						<div className={styles.menu_item}>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<span>{isOpen ? 'close' : 'menu'}</span>
 					</div>
 				</div>
 				<div className={styles.navbar_search}>

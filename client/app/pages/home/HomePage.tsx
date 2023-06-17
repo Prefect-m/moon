@@ -183,6 +183,13 @@ export const HomePage: FC = () => {
 			<section className='container'>
 				<ExtendSearchComponent />
 			</section>
+			<section className='container'>
+				<MovieCardComponent
+					items={movies}
+					subtitle='Вы можете зарегистрироваться и собирать свою коллекцию, и возможно она появится здесь'
+					title='Избранные'
+				/>
+			</section>
 		</>
 	)
 }

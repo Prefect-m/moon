@@ -1,12 +1,15 @@
 import { Metadata } from 'next'
 import { Raleway } from 'next/font/google'
 import {
+	FooterComponent,
 	IconsComponent,
+	MenuNavigation,
 	NavbarComponent,
 	PlayPanelComponent,
-} from './components'
+} from '@/components'
 import { PlayerContextProvider } from './context/Player.context'
 import './styles/globals.scss'
+import { MenuNavigationProvider } from './context/MenuNavigationContext'
 const raleway = Raleway({
 	weight: ['300', '400', '700'],
 	style: ['normal'],
@@ -36,11 +39,16 @@ export default function RootLayout({
 			{/* SEO */}
 			<IconsComponent />
 			<body className={raleway.className}>
-				<NavbarComponent />
-				<PlayerContextProvider>
-					<PlayPanelComponent />
-					{children}
-				</PlayerContextProvider>
+				<MenuNavigationProvider>
+					{/* Menu Navigation */}
+					<MenuNavigation />
+					<NavbarComponent />
+					<PlayerContextProvider>
+						<PlayPanelComponent />
+						{children}
+					</PlayerContextProvider>
+					<FooterComponent />
+				</MenuNavigationProvider>
 			</body>
 		</html>
 	)

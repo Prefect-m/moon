@@ -1,7 +1,7 @@
 'use client'
 import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation } from 'swiper'
+import { Autoplay, Navigation, Pagination } from 'swiper'
 import styles from './MovieSearch.module.scss'
 import { IMovieSearchSliderProps } from './MovieSearch.props'
 import { ButtonComponent } from '../../global/button/ButtonComponent'
@@ -15,7 +15,7 @@ export const MovieSearchSlider: FC<IMovieSearchSliderProps> = ({ movies }) => {
 			loop
 			slidesPerView={2.8}
 			centeredSlidesBounds
-			// autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
+			autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
 			speed={500}
 			modules={[Autoplay, Navigation]}
 			className={styles.slider}
