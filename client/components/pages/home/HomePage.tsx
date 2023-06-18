@@ -6,7 +6,7 @@ import {
 	MovieCardComponent,
 	NewMovieComponent,
 	TitleCompoent,
-} from '@/app/components'
+} from '@/components'
 import { FC } from 'react'
 import styles from './HomePage.module.scss'
 import { IMovie } from '@/app/interfaces/movie.interface'

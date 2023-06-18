@@ -3,7 +3,7 @@ import { FC } from 'react'
 import styles from './MainSlider.module.scss'
 import { ButtonComponent, TitleCompoent } from '@/components'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation, EffectCoverflow } from 'swiper'
+import { Autoplay, Navigation, EffectFade } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
@@ -39,8 +39,8 @@ export const MainSlider: FC = () => {
 			// autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
 			speed={800}
 			className={styles.wrapp}
-			modules={[Autoplay, Navigation, EffectCoverflow]}
-			effect='coverflow'
+			modules={[Autoplay, Navigation, EffectFade]}
+			effect='fade'
 			navigation={{
 				prevEl: '.prevBtn',
 				nextEl: '.nextBtn',

@@ -112,13 +112,17 @@ export const ExtendSearchComponent: FC = () => {
 							<span>Сортировка по</span>
 							<div className={styles.search_choice__item}>
 								<select name='jenre'>
-									<option value='просмотров'>просмотров</option>
+									<option value='просмотров'>просмотру</option>
 									<option value='рейтингу IMDB'>рейтингу IMDB</option>
 								</select>
 							</div>
 						</div>
+						<div className={styles.search_result}></div>
 					</div>
-					<MovieSearchSlider movies={movies} />
+					<MovieSearchSlider
+						movies={movies}
+						paginationEl={styles.search_result}
+					/>
 				</div>
 			</div>
 		</>

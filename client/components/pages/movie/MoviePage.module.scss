@@ -1,0 +1,144 @@
+@import '../../../styles/_mixins';
+@import '../../../styles/_vars';
+
+.movie {
+	height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	&_wrap {
+		@include container;
+		height: 100%;
+	}
+	&_content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 100%;
+		&__description {
+			color: $white;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+	&_name {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		& span {
+			font-size: 30px;
+			font-weight: bold;
+		}
+	}
+	&_buttons {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+	&_action {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+		flex: 1;
+		padding-left: 40px;
+		&__btn {
+			display: flex;
+			align-items: center;
+			color: $white;
+			gap: 20px;
+			font-size: 16px;
+			font-weight: 300;
+			& button {
+				border: none;
+				width: 100%;
+				background: $mainBlack;
+				border-radius: 4px;
+				width: 50px;
+				height: 50px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				&:hover {
+					box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.479);
+				}
+			}
+		}
+	}
+}
+.description {
+	@include container;
+	&_wrap {
+		display: flex;
+		justify-content: space-between;
+	}
+	&_enciclopedy {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		max-width: 60%;
+		width: 100%;
+		font-size: 13px;
+		&__item {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+		}
+		& span {
+			max-width: 30%;
+			width: 100%;
+			color: $grey;
+		}
+		&__title {
+			max-width: 60%;
+			width: 100%;
+			display: flex;
+			align-items: flex-end;
+		}
+	}
+}
+.actors {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	max-width: 35%;
+	height: 100%;
+	gap: 12px;
+	&_item {
+		max-width: 33.3%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+	&_image {
+		width: 100%;
+		height: 74px;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&_name {
+		font-size: 10px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	&_more {
+		border: none;
+		background: none;
+		text-decoration: underline;
+		cursor: pointer;
+		&::after {
+			content: '>';
+		}
+		&:disabled {
+			cursor: not-allowed;
+		}
+	}
+}

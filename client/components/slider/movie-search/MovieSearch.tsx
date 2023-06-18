@@ -7,8 +7,12 @@ import { IMovieSearchSliderProps } from './MovieSearch.props'
 import { ButtonComponent } from '../../global/button/ButtonComponent'
 import { TitleCompoent } from '../../global/title/Title'
 import { usePlayerContext } from '@/app/hooks'
+import 'swiper/css/pagination'
 
-export const MovieSearchSlider: FC<IMovieSearchSliderProps> = ({ movies }) => {
+export const MovieSearchSlider: FC<IMovieSearchSliderProps> = ({
+	movies,
+	paginationEl,
+}) => {
 	const { activeHandler, stateHandler } = usePlayerContext()
 	return (
 		<Swiper
@@ -17,8 +21,15 @@ export const MovieSearchSlider: FC<IMovieSearchSliderProps> = ({ movies }) => {
 			centeredSlidesBounds
 			autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
 			speed={500}
-			modules={[Autoplay, Navigation]}
+			modules={[Autoplay, Navigation, Pagination]}
 			className={styles.slider}
+			pagination={{
+				type: 'custom',
+				el: `.${paginationEl}`,
+				renderCustom: (swiper, current, total) => {
+					return `<span>Результаты поиска - показаны</span><span> ${current} / ${total}</span>`
+				},
+			}}
 		>
 			{movies.map(movie => (
 				<SwiperSlide key={movie.id} className={styles.slide}>

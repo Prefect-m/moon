@@ -7,4 +7,10 @@ export interface IMovie {
 	overlayPoster?: string
 	rating: number
 	source?: string
+	encyclopedic?: IMovieEncyclopedic[]
+}
+export interface IMovieEncyclopedic {
+	id: number
+	name: string
+	value: string
 }

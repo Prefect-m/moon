@@ -3,4 +3,5 @@ import { LegacyRef } from 'react'
 
 export interface IMovieSearchSliderProps {
 	movies: IMovie[]
+	paginationEl?: string
 }

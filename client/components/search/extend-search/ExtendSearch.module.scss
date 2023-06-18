@@ -52,4 +52,16 @@
 		font-weight: bold;
 		text-transform: uppercase;
 	}
+	&_result {
+		max-width: 20%;
+		width: 100%;
+		color: $mainBlack;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		& span {
+			@include numberFont;
+			font-weight: bold;
+		}
+	}
 }

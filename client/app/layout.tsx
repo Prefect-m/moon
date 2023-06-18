@@ -8,7 +8,7 @@ import {
 	PlayPanelComponent,
 } from '@/components'
 import { PlayerContextProvider } from './context/Player.context'
-import './styles/globals.scss'
+import '../styles/globals.scss'
 import { MenuNavigationProvider } from './context/MenuNavigationContext'
 const raleway = Raleway({
 	weight: ['300', '400', '700'],

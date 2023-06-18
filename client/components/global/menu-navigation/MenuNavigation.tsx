@@ -77,16 +77,16 @@ export const MenuNavigation: FC = () => {
 									<path
 										d='M2 5.29461C6.39281 0.901797 13.5157 0.901797 17.9085 5.29461C22.3013 9.68742 22.3013 16.8103 17.9085 21.2031C13.5157 25.5959 6.39281 25.5959 2 21.2031'
 										stroke='white'
-										stroke-width='3'
-										stroke-linecap='round'
-										stroke-linejoin='round'
+										strokeWidth='3'
+										strokeLinecap='round'
+										strokeLinejoin='round'
 									/>
 									<path
 										d='M15.1867 13.2489L6.81543 8.41553V18.0822L15.1867 13.2489Z'
 										stroke='white'
-										stroke-width='3'
-										stroke-linecap='round'
-										stroke-linejoin='round'
+										strokeWidth='3'
+										strokeLinecap='round'
+										strokeLinejoin='round'
 									/>
 								</svg>
 							</span>
