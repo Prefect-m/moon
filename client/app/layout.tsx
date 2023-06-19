@@ -3,6 +3,7 @@ import { Raleway } from 'next/font/google'
 import {
 	FooterComponent,
 	IconsComponent,
+	LoginRegister,
 	MenuNavigation,
 	NavbarComponent,
 	PlayPanelComponent,
@@ -40,6 +41,7 @@ export default function RootLayout({
 			<IconsComponent />
 			<body className={raleway.className}>
 				<MenuNavigationProvider>
+					<LoginRegister />
 					{/* Menu Navigation */}
 					<MenuNavigation />
 					<NavbarComponent />

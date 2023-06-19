@@ -1,14 +1,13 @@
 'use client'
 import { FC } from 'react'
-import styles from './MainSlider.module.scss'
 import { ButtonComponent, TitleCompoent } from '@/components'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Navigation, EffectFade } from 'swiper'
+import { Autoplay, Navigation, EffectCreative } from 'swiper'
+import styles from './Hero-slider.module.scss'
 import 'swiper/css'
-import 'swiper/css/pagination'
 
-export const MainSlider: FC = () => {
-	const mainSlideData = [
+export const HeroSlider: FC = () => {
+	const HERO_SLIDER_DATA = [
 		{
 			id: 1,
 			image:
@@ -36,17 +35,27 @@ export const MainSlider: FC = () => {
 		<Swiper
 			loop
 			slidesPerView={1}
-			// autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
+			autoplay={{ delay: 4000, pauseOnMouseEnter: true }}
 			speed={800}
 			className={styles.wrapp}
-			modules={[Autoplay, Navigation, EffectFade]}
-			effect='fade'
+			modules={[Autoplay, Navigation, EffectCreative]}
+			effect='creative'
+			creativeEffect={{
+				prev: {
+					// will set `translateZ(-400px)` on previous slides
+					translate: [0, 0, -400],
+				},
+				next: {
+					// will set `translateX(100%)` on next slides
+					translate: ['100%', 0, 0],
+				},
+			}}
 			navigation={{
 				prevEl: '.prevBtn',
 				nextEl: '.nextBtn',
 			}}
 		>
-			{mainSlideData.map(slide => (
+			{HERO_SLIDER_DATA.map(slide => (
 				<SwiperSlide key={slide.id} className={styles.slide}>
 					<div className={styles.slide_image}>
 						<img src={slide.image} alt={slide.title} />

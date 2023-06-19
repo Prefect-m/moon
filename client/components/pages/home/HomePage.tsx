@@ -1,16 +1,16 @@
 'use client'
-import {
-	ButtonComponent,
-	ExtendSearchComponent,
-	MainSlider,
-	MovieCardComponent,
-	NewMovieComponent,
-	TitleCompoent,
-} from '@/components'
 import { FC } from 'react'
 import styles from './HomePage.module.scss'
 import { IMovie } from '@/app/interfaces/movie.interface'
 import { usePlayerContext } from '@/app/hooks'
+import {
+	ButtonComponent,
+	MovieCardComponent,
+	NewMovieComponent,
+	TitleCompoent,
+	HeroSlider,
+	ExtendSearchComponent,
+} from '@/components'
 
 export const HomePage: FC = () => {
 	const { activeHandler } = usePlayerContext()
@@ -72,7 +72,7 @@ export const HomePage: FC = () => {
 	return (
 		<>
 			<section className={styles.hero}>
-				<MainSlider />
+				<HeroSlider />
 				<div className={styles.slider}>
 					<div className={styles.slider_slide}>
 						<div className={styles.slider_slide_image}>

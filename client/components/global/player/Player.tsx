@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { IPlayer } from './Player.props'
 import styles from './Player.module.scss'
-import { Controlls } from './player-controls/Player.controls'
+import { Controlls } from './player-controls/Player-controls'
 import { usePlayerContext } from '@/app/hooks'
 
 export const Player = ({

@@ -4,8 +4,8 @@ import styles from './MoviePage.module.scss'
 import { TitleCompoent } from '@/components/global/title/Title'
 import { ButtonComponent } from '@/components/global/button/ButtonComponent'
 import { IMovie, IMovieEncyclopedic } from '@/app/interfaces/movie.interface'
-import { MovieCardComponent } from '@/components/movie/movie-card/MovieCard'
-import { NewMovieComponent } from '@/components/movie/new-movie/NewMovie'
+import { MovieCardComponent } from '@/components/movie/movie-card/Movie-card'
+import { NewMovieComponent } from '@/components/movie/new-movie/New-movie'
 import { ExtendSearchComponent } from '@/components/search/extend-search/ExtendSearch'
 
 export const MoviePage: FC = () => {
@@ -217,9 +217,9 @@ export const MoviePage: FC = () => {
 										<path
 											d='M2.99222 10.773C2.40024 10.1462 1.93065 9.40207 1.61028 8.58312C1.2899 7.76417 1.125 6.88642 1.125 5.99999C1.125 5.11356 1.2899 4.23581 1.61028 3.41686C1.93065 2.5979 2.40024 1.85379 2.99222 1.22699M12.0079 1.22699C12.5999 1.85379 13.0695 2.5979 13.3898 3.41686C13.7102 4.23581 13.8751 5.11356 13.8751 5.99999C13.8751 6.88642 13.7102 7.76417 13.3898 8.58312C13.0695 9.40207 12.5999 10.1462 12.0079 10.773M4.99539 8.65124C4.33143 7.94801 3.95844 6.99436 3.95844 5.99999C3.95844 5.00562 4.33143 4.05197 4.99539 3.34874M10.0047 3.34874C10.6687 4.05197 11.0417 5.00562 11.0417 5.99999C11.0417 6.99436 10.6687 7.94801 10.0047 8.65124M8.20839 5.99999C8.20839 6.1989 8.13376 6.38967 8.00092 6.53032C7.86808 6.67097 7.68792 6.74999 7.50006 6.74999C7.31219 6.74999 7.13203 6.67097 6.99919 6.53032C6.86635 6.38967 6.79172 6.1989 6.79172 5.99999C6.79172 5.80108 6.86635 5.61031 6.99919 5.46966C7.13203 5.32901 7.31219 5.24999 7.50006 5.24999C7.68792 5.24999 7.86808 5.32901 8.00092 5.46966C8.13376 5.61031 8.20839 5.80108 8.20839 5.99999Z'
 											stroke='white'
-											stroke-width='2'
-											stroke-linecap='round'
-											stroke-linejoin='round'
+											strokeWidth='2'
+											strokeLinecap='round'
+											strokeLinejoin='round'
 										/>
 									</svg>
 								</button>

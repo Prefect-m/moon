@@ -1,10 +1,10 @@
 import { FC } from 'react'
-import styles from './NewMovie.module.scss'
+import styles from './New-movie.module.scss'
 import { RatingComponent } from '../../global/rating/Rating'
 import { ButtonComponent } from '../../global/button/ButtonComponent'
 import { TitleCompoent } from '../../global/title/Title'
 import { TimeComponent } from '../../global/time/Time'
-import { INewMovieProps } from './NewMovie.props'
+import { INewMovieProps } from './New-movie.props'
 
 export const NewMovieComponent: FC<INewMovieProps> = ({
 	subtitle = 'Новинка набравшая наибольшее число просмотров',

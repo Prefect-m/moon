@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
-import { IControlsProps } from './Player.controls.props'
-import { TimeElapsed } from '../timeElapsed/Time'
-import styles from './Player.controls.module.scss'
+import { IControlsProps } from './Player-controls.props'
+import { TimeElapsed } from '../time-elapsed/Time-elapsed'
+import styles from './Player-controls.module.scss'
 
 export const Controlls = ({
 	isPlaying,

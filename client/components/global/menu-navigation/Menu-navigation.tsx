@@ -1,6 +1,6 @@
 'use client'
 import { FC } from 'react'
-import styles from './MenuNavigation.module.scss'
+import styles from './Menu-navigation.module.scss'
 import { useMenuNavigationContext } from '@/app/hooks'
 import classNames from 'classnames'
 

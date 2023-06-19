@@ -2,14 +2,14 @@
 import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, Pagination } from 'swiper'
-import styles from './MovieSearch.module.scss'
-import { IMovieSearchSliderProps } from './MovieSearch.props'
+import styles from './ExtendedSearch.module.scss'
+import { IMovieSearchSliderProps } from './ExtendedSearch.props'
 import { ButtonComponent } from '../../global/button/ButtonComponent'
 import { TitleCompoent } from '../../global/title/Title'
 import { usePlayerContext } from '@/app/hooks'
 import 'swiper/css/pagination'
 
-export const MovieSearchSlider: FC<IMovieSearchSliderProps> = ({
+export const ExtendedSearch: FC<IMovieSearchSliderProps> = ({
 	movies,
 	paginationEl,
 }) => {
@@ -27,7 +27,7 @@ export const MovieSearchSlider: FC<IMovieSearchSliderProps> = ({
 				type: 'custom',
 				el: `.${paginationEl}`,
 				renderCustom: (swiper, current, total) => {
-					return `<span>Результаты поиска - показаны</span><span> ${current} / ${total}</span>`
+					return `<span></span><span> ${current} / ${total}</span>`
 				},
 			}}
 		>

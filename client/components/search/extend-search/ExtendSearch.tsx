@@ -2,7 +2,7 @@
 import { FC } from 'react'
 import styles from './ExtendSearch.module.scss'
 import { TitleCompoent } from '../../global/title/Title'
-import { MovieSearchSlider } from '@/components'
+import { ExtendedSearch } from '@/components'
 import { IMovie } from '@/app/interfaces/movie.interface'
 
 export const ExtendSearchComponent: FC = () => {
@@ -119,10 +119,7 @@ export const ExtendSearchComponent: FC = () => {
 						</div>
 						<div className={styles.search_result}></div>
 					</div>
-					<MovieSearchSlider
-						movies={movies}
-						paginationEl={styles.search_result}
-					/>
+					<ExtendedSearch movies={movies} paginationEl={styles.search_result} />
 				</div>
 			</div>
 		</>

@@ -1,6 +1,6 @@
 'use client'
 import { FC } from 'react'
-import styles from './PlayPanel.module.scss'
+import styles from './Play-panel.module.scss'
 import classNames from 'classnames'
 import { usePlayerContext } from '@/app/hooks'
 import { Player } from '../player/Player'
