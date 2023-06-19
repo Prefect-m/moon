@@ -8,10 +8,71 @@
 	height: 100%;
 	background: rgba(14, 14, 14, 0.992);
 	z-index: 250;
-	&_wrap {
-		@include container;
+	transform: translateY(-100%);
+	transition: transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	&.active {
+		transform: translateY(0);
 	}
-	&_top {
+	&_wrap {
+		max-width: 70%;
+		margin-left: auto;
+		margin-right: auto;
 		padding-top: 90px;
 	}
+	&_top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&_close {
+		display: flex;
+		align-items: center;
+		gap: 3px;
+		color: $grey;
+		cursor: pointer;
+		& span {
+			font-size: 12px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+	&_content {
+		max-width: 40%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 38px;
+		display: flex;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 40px;
+	}
+	&_buttons {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		& button {
+			display: flex;
+			align-items: center;
+			gap: 4px;
+			border: none;
+			color: $white;
+			background: none;
+			font-size: 10px;
+			text-transform: uppercase;
+			&:last-child {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.submit_buttion {
+	padding: 14px 44px;
+	color: $white;
+	border: 1px solid $purple;
+	background: none;
+	cursor: pointer;
 }

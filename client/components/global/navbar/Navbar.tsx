@@ -1,12 +1,13 @@
 'use client'
 import { FC } from 'react'
 import styles from './Navbar.module.scss'
-import { useMenuNavigationContext } from '@/app/hooks'
+import { useMenuNavigationContext, useSignContext } from '@/app/hooks'
 import classNames from 'classnames'
 import { LogoIcon } from '@/components'
 
 export const NavbarComponent: FC = () => {
 	const { openCloseHandler, isOpen } = useMenuNavigationContext()
+	const { handlerCloseOpen } = useSignContext()
 	return (
 		<div className={styles.navbar}>
 			<div className={styles.navbar_wrapp}>
@@ -45,7 +46,7 @@ export const NavbarComponent: FC = () => {
 					</div>
 				</div>
 				<div className={styles.navbar_action}>
-					<button>
+					<button onClick={handlerCloseOpen}>
 						<svg
 							width='15'
 							height='17'
