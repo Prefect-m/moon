@@ -1,0 +1,49 @@
+@import '../../styles/mixin';
+@import '../../styles/_vars';
+.button {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	&_playonline {
+		text-transform: uppercase;
+		font-size: 10px;
+		font-weight: bold;
+	}
+	&_white {
+		color: $white;
+		svg {
+			fill: $white;
+		}
+	}
+	&_purple {
+		color: $purple;
+		svg {
+			fill: $purple;
+		}
+	}
+	&_4xl {
+		svg {
+			width: 84px;
+			height: 84px;
+		}
+	}
+	&_3xl {
+		svg {
+			width: 66px;
+			height: 66px;
+		}
+	}
+	&_2xl {
+		font-size: 14px;
+		svg {
+			width: 31px;
+			height: 31px;
+		}
+	}
+	&_1xl {
+		svg {
+			width: 22px;
+			height: 22px;
+		}
+	}
+}

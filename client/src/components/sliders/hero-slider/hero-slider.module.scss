@@ -1,0 +1,84 @@
+@import '../../../styles/mixin';
+@import '../../../styles/_vars';
+
+.wrapp {
+	overflow: hidden;
+}
+.slide {
+	&_image {
+		width: 100%;
+		height: 430px;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&_poster {
+		position: absolute;
+		left: 30px;
+		bottom: 50px;
+		max-width: 170px;
+		width: 100%;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&_content {
+		display: flex;
+		justify-content: flex-end;
+		gap: 20px;
+		background: $mainBlack;
+		padding-top: 30px;
+		padding-bottom: 60px;
+		&__description {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			max-width: 55%;
+			width: 100%;
+			padding-right: 20px;
+			color: $white;
+		}
+		&__title {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			font-size: 24px;
+			font-weight: bold;
+			color: $white;
+			margin-bottom: 8px;
+			& sup {
+				font-size: 14px;
+				font-weight: 300;
+			}
+		}
+		&__quote {
+			color: $grey;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			& span {
+				font-size: 12px;
+				font-weight: 300;
+			}
+		}
+	}
+}
+.slider_btn {
+	position: absolute;
+	top: 40%;
+	transform: translateY(-40%);
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	z-index: 10;
+	padding: 0 20px;
+	& button {
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+}

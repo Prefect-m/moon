@@ -1,0 +1,11 @@
+@import '../../styles/mixin';
+@import '../../styles/_vars';
+
+.rating {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: $white;
+	@include numberFont;
+	font-weight: bold;
+}

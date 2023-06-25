@@ -1,0 +1,31 @@
+@import '../../styles/mixin';
+@import '../../styles/_vars';
+.heading {
+	margin: 0;
+	padding: 0;
+	&_1xl {
+		font-size: 36px;
+		font-weight: bold;
+		line-height: 38px;
+	}
+	&_2xl {
+		font-size: 24px;
+		font-weight: bold;
+		line-height: 30px;
+	}
+	&_3xl {
+		font-size: 18px;
+		line-height: 20px;
+	}
+	&_4xl {
+		font-size: 16px;
+		line-height: 19px;
+	}
+	&_subtitle {
+		font-size: 12px;
+		line-height: 18px;
+		font-weight: 300;
+		font-style: normal;
+		padding-left: 6px;
+	}
+}

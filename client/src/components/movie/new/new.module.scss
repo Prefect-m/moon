@@ -1,0 +1,71 @@
+@import '../../../styles/mixin';
+@import '../../../styles/_vars';
+.movie {
+	padding: 30px 0;
+	&_box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		overflow: hidden;
+		color: $white;
+		&:nth-child(1) {
+			max-width: 60%;
+			height: 430px;
+		}
+		&:nth-child(2) {
+			max-width: 35%;
+			height: 270px;
+		}
+		&__top {
+			display: flex;
+			align-items: center;
+			gap: 30px;
+			padding: 12px 20px;
+		}
+	}
+	&_jenre {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 4px;
+		font-size: 13px;
+		font-weight: 300;
+		& span {
+			position: absolute;
+			bottom: -20px;
+		}
+	}
+	&_image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: -1;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+		}
+	}
+	&_name {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		min-height: 40%;
+		padding: 0 20px;
+	}
+}
+.wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
