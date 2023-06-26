@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { LayoutProps } from './Layout.props'
 
 const raleway = Raleway({
-	subsets: ['latin-ext'],
+	subsets: ['latin'],
 	weight: ['300', '400', '700'],
 })
 

@@ -5,5 +5,5 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	children?: string
 	btnType: 'play' | 'pause' | 'background' | 'play-online'
 	size: '1xl' | '2xl' | '3xl' | '4xl'
-	color: 'white' | 'black' | 'purple'
+	color?: 'white' | 'black' | 'purple'
 }

@@ -13,15 +13,18 @@ export const Button = forwardRef<HTMLButtonElement, IButtonProps>(
 					[styles.button_white]: color === 'white',
 					[styles.button_purple]: color === 'purple',
 					[styles.button_playonline]: btnType === 'play-online',
+					[styles.button_background]: btnType === 'background',
 					[styles.button_4xl]: size === '4xl',
 					[styles.button_3xl]: size === '3xl',
 					[styles.button_2xl]: size === '2xl',
 					[styles.button_1xl]: size === '1xl',
 				})}
+				{...props}
+				ref={ref}
 			>
 				{btnType === 'play' && <BsPlayCircle />}
 				{btnType === 'play-online' && <BsFillPlayFill />}
-				{children && children}
+				<span>{children && children}</span>
 			</button>
 		)
 	}

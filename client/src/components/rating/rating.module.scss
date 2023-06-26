@@ -8,4 +8,8 @@
 	color: $white;
 	@include numberFont;
 	font-weight: bold;
+	& span {
+		font-size: 14px;
+		font-weight: 400;
+	}
 }

@@ -9,7 +9,7 @@ export const Rating: FC<{ rating: number; size: number }> = ({
 	return (
 		<div className={styles.rating}>
 			<LiaImdb color='yellow' size={size} />
-			{rating}
+			<span>{rating}</span>
 		</div>
 	)
 }

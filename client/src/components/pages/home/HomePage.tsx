@@ -63,7 +63,12 @@ export const HomePage: FC = () => {
 								<span>Ужасы/Триллер - 2000 г.</span>
 							</Titles>
 						</div>
-						<Button btnType='play' color='purple' size='4xl' />
+						<div className={styles.online_btns}>
+							<Button btnType='play' color='purple' size='4xl' />
+							<Button btnType='background' size='1xl'>
+								создать эфир
+							</Button>
+						</div>
 					</div>
 					<div className={styles.online_chat}>
 						<div className={styles.online_views}>

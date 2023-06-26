@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, EffectCreative } from 'swiper'
 import styles from './hero-slider.module.scss'
-import { Button, Titles } from '@/components'
+import { Button, Duration, Titles } from '@/components'
 import 'swiper/css'
 
 export const HeroSlider: FC = () => {
@@ -60,7 +60,9 @@ export const HeroSlider: FC = () => {
 					<div className={styles.slide_content}>
 						<Button btnType='play' size='3xl' color='white' />
 						<div className={styles.slide_content__description}>
-							<Titles size='2xl'>{slide.title}</Titles>
+							<Titles size='2xl' className={styles.slide_content__title}>
+								{slide.title} <Duration time={1.15} />
+							</Titles>
 							<div className={styles.slide_content__quote}>
 								<span>{slide.subtitle}</span>
 								<span>{slide.realeseData}</span>
