@@ -1,0 +1,26 @@
+@import '../../../styles/mixin';
+@import '../../../styles/_vars';
+.search {
+	&_wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding-top: 30px;
+		padding-bottom: 20px;
+	}
+	&_actions {
+		display: flex;
+		align-items: center;
+		gap: 50px;
+		max-width: 80%;
+		width: 100%;
+	}
+	&_item {
+		position: relative;
+		max-width: 20%;
+		width: 100%;
+	}
+	&_slider {
+		padding: 12px 0;
+	}
+}

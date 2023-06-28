@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import styles from './navbar.module.scss'
 import { FC } from 'react'
 import { Logo } from '@/icons'
@@ -6,8 +5,12 @@ import { Field } from '@/components'
 import { GoSearch } from 'react-icons/go'
 import { FaUserAlt } from 'react-icons/fa'
 import { BsFillPlusSquareFill } from 'react-icons/bs'
+import { useNavigation } from '@/hooks/navigation'
+import classNames from 'classnames'
 
 export const Navbar: FC = (): JSX.Element => {
+	const { handlerOpenClose, isOpen } = useNavigation()
+
 	return (
 		<div className={styles.navbar}>
 			<div className={styles.wrap}>
@@ -16,9 +19,16 @@ export const Navbar: FC = (): JSX.Element => {
 					<div className={styles.logo}>
 						<Logo />
 					</div>
-					<div className={styles.menu}>
-						<span></span>
-						<span>menu</span>
+					<div
+						className={classNames(styles.menu, { [styles.active]: isOpen })}
+						onClick={handlerOpenClose}
+					>
+						<div className={styles.menu_line}>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<strong>{isOpen ? 'close' : 'menu'}</strong>
 					</div>
 				</div>
 				{/* search */}

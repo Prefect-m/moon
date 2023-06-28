@@ -1,0 +1,80 @@
+@import '../../styles/mixin';
+@import '../../styles/_vars';
+.navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	z-index: 100;
+	pointer-events: none;
+	&_wrap {
+		display: flex;
+		justify-content: center;
+		gap: 70px;
+		@include container;
+		pointer-events: all;
+	}
+	&_overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.98);
+		z-index: -1;
+	}
+}
+.menu {
+	display: flex;
+	flex-direction: column;
+	color: $white;
+	max-width: 35%;
+	width: 100%;
+	&_title {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		width: 67%;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	&_list {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		padding-top: 20px;
+		padding-left: 30px;
+		&__item {
+			font-size: 14px;
+			font-weight: 400;
+			color: $grey;
+		}
+	}
+}
+.nav {
+	position: absolute;
+	width: 100%;
+	bottom: 10%;
+	pointer-events: all;
+
+	&_list {
+		display: flex;
+		align-items: center;
+		gap: 70px;
+		max-width: 66%;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		&__item {
+			a {
+				color: $grey;
+				font-size: 10px;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+		}
+	}
+}

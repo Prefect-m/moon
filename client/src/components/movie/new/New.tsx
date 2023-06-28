@@ -45,12 +45,9 @@ export const NewMovie: FC = () => {
 							backgroundImage: `url(https://res.cloudinary.com/djzubalr7/image/upload/v1687705091/moon/100x64_3_w0uqkv.jpg)`,
 						}}
 					>
-						<Button
-							className={styles.content_btn}
-							btnType='play'
-							size='2xl'
-							color='white'
-						/>
+						<div className={styles.content_btn}>
+							<Button btnType='play' size='2xl' color='white' />
+						</div>
 					</div>
 				</div>
 			</div>

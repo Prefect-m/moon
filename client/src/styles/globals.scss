@@ -7,6 +7,11 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+body {
+	&.block {
+		overflow: hidden;
+	}
+}
 button {
 	background: none;
 	border: none;
@@ -23,4 +28,17 @@ button {
 }
 section {
 	padding: 50px 0;
+}
+a,
+a:focus {
+	text-decoration: none;
+	color: inherit;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+@-moz-document url-prefix() {
+	html {
+		scrollbar-width: none;
+	}
 }

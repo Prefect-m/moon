@@ -77,7 +77,7 @@ export const CardMovies: IMovie[] = [
 		year: 2023,
 	},
 	{
-		id: 5,
+		id: 6,
 		title: 'Отзвуки прошлого',
 		jenre: 'Боевик/Драма',
 		poster:

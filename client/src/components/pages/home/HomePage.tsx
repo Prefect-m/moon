@@ -1,8 +1,16 @@
 import { Layout } from '@/components/layout/Layout'
 import { FC } from 'react'
-import { Button, HeroSlider, MovieCard, NewMovie, Titles } from '@/components'
+import {
+	Button,
+	ExtendedSearch,
+	HeroSlider,
+	MovieCard,
+	NewMovie,
+	Titles,
+} from '@/components'
 import styles from './home.module.scss'
 import { CardMovies, HeroMovie } from './placeholder.data'
+import { BiPlay } from 'react-icons/bi'
 
 export const HomePage: FC = () => {
 	return (
@@ -65,8 +73,8 @@ export const HomePage: FC = () => {
 						</div>
 						<div className={styles.online_btns}>
 							<Button btnType='play' color='purple' size='4xl' />
-							<Button btnType='background' size='1xl'>
-								создать эфир
+							<Button btnType='background' size='1xl' Icon={BiPlay}>
+								онлайн кинотеатр
 							</Button>
 						</div>
 					</div>
@@ -135,6 +143,19 @@ export const HomePage: FC = () => {
 					Новинка недели
 				</Titles>
 				<NewMovie />
+			</section>
+			<div className='container'>
+				<Titles size='1xl' subtitle='Выберите опции для расширенного поиска'>
+					Расширенный поиск
+				</Titles>
+				<ExtendedSearch />
+			</div>
+			<section className='container'>
+				<MovieCard
+					data={CardMovies}
+					sectionSubtitle='Вы можете зарегистрироваться и собирать свою коллекцию, и возможно она появится здесь'
+					sectionTitle='Избранные'
+				/>
 			</section>
 		</Layout>
 	)
