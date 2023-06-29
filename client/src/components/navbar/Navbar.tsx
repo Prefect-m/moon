@@ -5,7 +5,7 @@ import { Field } from '@/components'
 import { GoSearch } from 'react-icons/go'
 import { FaUserAlt } from 'react-icons/fa'
 import { BsFillPlusSquareFill } from 'react-icons/bs'
-import { useNavigation } from '@/hooks/navigation'
+import { useNavigation } from '@/hooks'
 import classNames from 'classnames'
 
 export const Navbar: FC = (): JSX.Element => {

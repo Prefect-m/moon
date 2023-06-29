@@ -3,22 +3,26 @@ import styles from './card.module.scss'
 import { ICardProps } from './Card.props'
 import { Titles, Button, Rating } from '@/components'
 import { AiFillInfoCircle } from 'react-icons/ai'
+import { useScreen } from '@/hooks'
 
 export const MovieCard: FC<ICardProps> = ({
 	data,
 	sectionSubtitle,
 	sectionTitle,
 }) => {
+	const { handlerActive, handlerSource } = useScreen()
+
+	const LIMIT = 6
 	return (
 		<>
 			<Titles size='1xl' className={styles.title} subtitle={sectionSubtitle}>
 				{sectionTitle}
 			</Titles>
 			<div className={styles.cards}>
-				{data.map((movie) => (
+				{data.slice(0, LIMIT).map((movie) => (
 					<div className={styles.card} key={movie.id}>
 						<div className={styles.card_rating}>
-							<Rating rating={movie.rating} size={30} />
+							{movie.rating && <Rating rating={movie.rating} size={30} />}
 						</div>
 						<div
 							className={styles.card_image}
@@ -30,7 +34,18 @@ export const MovieCard: FC<ICardProps> = ({
 								<span>Жанр: {movie.jenre}</span>
 							</div>
 							<div className={styles.card_action}>
-								<Button btnType='play-online' size='1xl' color='black'>
+								<Button
+									onClick={() => {
+										handlerActive()
+										handlerSource(
+											movie.source ? movie.source : '',
+											movie.overlay_poster ? movie.overlay_poster : ''
+										)
+									}}
+									btnType='play-online'
+									size='1xl'
+									color='black'
+								>
 									смотреть онлайн
 								</Button>
 								<button>

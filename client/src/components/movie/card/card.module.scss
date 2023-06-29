@@ -2,13 +2,14 @@
 @import '../../../styles/_vars';
 .cards {
 	display: flex;
-	justify-content: space-between;
 	flex-wrap: wrap;
+	gap: 20px;
+	row-gap: 30px;
 	padding-top: 31px;
 }
 .card {
 	position: relative;
-	max-width: calc(192px - 10px);
+	max-width: calc(15%);
 	overflow: hidden;
 	width: 100%;
 	display: flex;

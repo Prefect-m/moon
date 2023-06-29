@@ -1,9 +1,9 @@
 import { FC, useEffect } from 'react'
-import { EndSection, Navbar, Navigation } from '@/components'
+import { EndSection, Navbar, Navigation, Screen } from '@/components'
 import { Raleway } from 'next/font/google'
 import Head from 'next/head'
 import { LayoutProps } from './Layout.props'
-import { useNavigation } from '@/hooks/navigation'
+import { useNavigation } from '@/hooks'
 
 const raleway = Raleway({
 	subsets: ['latin'],
@@ -26,6 +26,7 @@ export const Layout: FC<LayoutProps> = ({ children, title }) => {
 				<title>{`${title} | Moon online cinema`}</title>
 			</Head>
 			<main className={raleway.className}>
+				<Screen />
 				<Navigation />
 				<Navbar />
 				{children}

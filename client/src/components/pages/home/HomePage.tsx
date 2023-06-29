@@ -9,10 +9,13 @@ import {
 	Titles,
 } from '@/components'
 import styles from './home.module.scss'
-import { CardMovies, HeroMovie } from './placeholder.data'
 import { BiPlay } from 'react-icons/bi'
+import { HERO_SIDE_MOVIE, MOVIE_DATA } from '@/movie.data'
+import { useScreen } from '@/hooks'
 
 export const HomePage: FC = () => {
+	const { handlerActive, handlerSource } = useScreen()
+
 	return (
 		<Layout title='Главная'>
 			<div className='container'>
@@ -21,14 +24,25 @@ export const HomePage: FC = () => {
 						<HeroSlider />
 					</div>
 					<div className={styles.hero_popular}>
-						{HeroMovie.map((movie) => (
+						{HERO_SIDE_MOVIE.map((movie) => (
 							<div className={styles.movie} key={movie.id}>
 								<div
 									className={styles.movie_image}
 									style={{ backgroundImage: `url(${movie.poster})` }}
 								></div>
 								<div className={styles.movie_content}>
-									<Button btnType='play' size='2xl' color='black' />
+									<Button
+										onClick={() => {
+											handlerActive()
+											handlerSource(
+												movie.source ? movie.source : '',
+												movie.overlay_poster ? movie.overlay_poster : ''
+											)
+										}}
+										btnType='play'
+										size='2xl'
+										color='black'
+									/>
 									<div className={styles.movie_name}>
 										<Titles size='3xl'>{movie.title}</Titles>
 										<div className={styles.movie_quote}>
@@ -44,7 +58,7 @@ export const HomePage: FC = () => {
 			</div>
 			<section className='container'>
 				<MovieCard
-					data={CardMovies}
+					data={MOVIE_DATA}
 					sectionSubtitle='Самые популярные, на основе просмотров'
 					sectionTitle='Популярные'
 				/>
@@ -152,7 +166,7 @@ export const HomePage: FC = () => {
 			</div>
 			<section className='container'>
 				<MovieCard
-					data={CardMovies}
+					data={MOVIE_DATA}
 					sectionSubtitle='Вы можете зарегистрироваться и собирать свою коллекцию, и возможно она появится здесь'
 					sectionTitle='Избранные'
 				/>

@@ -5,7 +5,7 @@ import { MdLocalMovies } from 'react-icons/md'
 import { RiGooglePlayFill } from 'react-icons/ri'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useNavigation } from '@/hooks/navigation'
+import { useNavigation } from '@/hooks'
 import { movieMenu, navMenu, tvSeriesMenu } from './placeholder.data'
 
 export const Navigation: FC = () => {

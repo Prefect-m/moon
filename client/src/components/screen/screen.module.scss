@@ -1,0 +1,43 @@
+@import '../../styles/mixin';
+@import '../../styles/_vars';
+.screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 300;
+	pointer-events: none;
+	&_wrap {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.98);
+		pointer-events: all;
+	}
+	&_content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		max-width: 80%;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 50px;
+		padding-bottom: 20px;
+	}
+	&_top {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&_player {
+		max-width: 80%;
+		width: 100%;
+		height: 80vh;
+	}
+}

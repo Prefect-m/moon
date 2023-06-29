@@ -3,32 +3,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Navigation, EffectCreative } from 'swiper'
 import styles from './hero-slider.module.scss'
 import { Button, Duration, Titles } from '@/components'
+import { HERO_MOVIE_DATA } from '@/movie.data'
 import 'swiper/css'
+import { useScreen } from '@/hooks'
 
 export const HeroSlider: FC = () => {
-	const HERO_SLIDER_DATA = [
-		{
-			id: 1,
-			image:
-				'https://tech.liga.net/images/general/2023/05/04/20230504181123-4576.jpg?v=1683213083',
-			poster: 'https://static.hdrezka.ac/i/2023/5/4/b380edb6a8525ym72t55k.png',
-			title: 'Дюна 2',
-			subtitle: 'Официальный трейлер к фильму «Дюна: Часть вторая»',
-			time: '1:15',
-			realeseData: '3 ноября 2023 г.',
-		},
-		{
-			id: 2,
-			image:
-				'https://thumbs.dfs.ivi.ru/storage9/contents/8/c/727f49538f21eeff8bd368d79fb803.jpg/858x483/?q=60',
-			poster:
-				'https://st.kinobase.org/storage/360x534/posters/2020/02/63911636aaa22abaa0e0.jpg',
-			title: 'Бегущий по лезвию 2049',
-			subtitle: 'Официальный трейлер к фильму «Бегущий по лезвию 2049»',
-			time: '1:23',
-			realeseData: '3 ноября 2023 г.',
-		},
-	]
+	const { handlerActive, handlerSource } = useScreen()
 
 	return (
 		<Swiper
@@ -52,13 +32,24 @@ export const HeroSlider: FC = () => {
 				nextEl: '.nextBtn',
 			}}
 		>
-			{HERO_SLIDER_DATA.map((slide) => (
+			{HERO_MOVIE_DATA.map((slide) => (
 				<SwiperSlide key={slide.id} className={styles.slide}>
 					<div className={styles.slide_image}>
-						<img src={slide.image} alt={slide.title} />
+						<img src={slide.overlay_poster} alt={slide.title} />
 					</div>
 					<div className={styles.slide_content}>
-						<Button btnType='play' size='3xl' color='white' />
+						<Button
+							btnType='play'
+							size='3xl'
+							color='white'
+							onClick={() => {
+								handlerActive()
+								handlerSource(
+									slide.source ? slide.source : '',
+									slide.overlay_poster ? slide.overlay_poster : ''
+								)
+							}}
+						/>
 						<div className={styles.slide_content__description}>
 							<Titles size='2xl' className={styles.slide_content__title}>
 								{slide.title} <Duration time={1.15} />

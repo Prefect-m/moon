@@ -1,12 +1,14 @@
 import { FC } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from 'swiper'
+import { Autoplay, Mousewheel } from 'swiper'
 import styles from './extended-search-slider.module.scss'
 import { Button, Titles } from '@/components'
-import { searchMovies } from './placeholder.data'
-import { CardMovies } from '@/components/pages/home/placeholder.data'
+import { MOVIE_DATA } from '@/movie.data'
+import { useScreen } from '@/hooks'
 
 export const ExtendedSearchSlide: FC = () => {
+	const { handlerActive, handlerSource } = useScreen()
+
 	return (
 		<>
 			<Swiper
@@ -16,15 +18,35 @@ export const ExtendedSearchSlide: FC = () => {
 				slidesPerView={3}
 				spaceBetween={20}
 				className={styles.slider}
-				modules={[Autoplay]}
+				modules={[Autoplay, Mousewheel]}
+				grabCursor
+				freeMode={{
+					enabled: true,
+					sticky: false,
+					momentumBounce: false,
+				}}
+				mousewheel={{
+					sensitivity: 4,
+				}}
 			>
-				{searchMovies.map((movie) => (
+				{MOVIE_DATA.map((movie) => (
 					<SwiperSlide className={styles.slide} key={movie.id}>
 						<div
 							className={styles.slide_image}
-							style={{ backgroundImage: `url(${movie.poster})` }}
+							style={{ backgroundImage: `url(${movie.overlay_poster})` }}
 						>
-							<Button btnType='play' size='3xl' color='white' />
+							<Button
+								btnType='play'
+								size='3xl'
+								color='white'
+								onClick={() => {
+									handlerActive()
+									handlerSource(
+										movie.source ? movie.source : '',
+										movie.overlay_poster ? movie.overlay_poster : ''
+									)
+								}}
+							/>
 						</div>
 						<div className={styles.slide_description}>
 							<Titles size='4xl' className={styles.slide_name}>
