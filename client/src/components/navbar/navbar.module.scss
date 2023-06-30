@@ -33,6 +33,7 @@
 	color: $grey;
 	cursor: pointer;
 	user-select: none;
+	transition: all 0.1s ease;
 	&_line {
 		display: flex;
 		flex-direction: column;
@@ -41,7 +42,7 @@
 			width: 20px;
 			height: 2px;
 			background: $grey;
-			transition: transform 0.3s ease;
+			transition: all 0.3s ease;
 			transform-origin: center;
 			&:nth-child(2) {
 				transform-origin: center;
@@ -52,6 +53,12 @@
 		font-size: 12px;
 		font-weight: 700;
 		text-transform: uppercase;
+	}
+	&:hover {
+		color: $white;
+		& span {
+			background: $white;
+		}
 	}
 	&.active {
 		& .menu_line {
@@ -125,5 +132,12 @@
 	border-radius: 4px;
 	& button {
 		color: $grey;
+	}
+	& svg {
+		cursor: pointer;
+		transition: fill 0.2s ease;
+		&:hover {
+			fill: $white;
+		}
 	}
 }
