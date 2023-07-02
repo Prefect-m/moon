@@ -6,6 +6,7 @@ import {
 	HeroSlider,
 	MovieCard,
 	NewMovie,
+	Recomended,
 	Titles,
 } from '@/components'
 import styles from './home.module.scss'
@@ -149,15 +150,8 @@ export const HomePage: FC = () => {
 					</div>
 				</div>
 			</section>
-			<section className='container'>
-				<Titles
-					size='1xl'
-					subtitle='Новинка набравшая наибольшее число просмотров'
-				>
-					Новинка недели
-				</Titles>
-				<NewMovie />
-			</section>
+			{/* Recommended */}
+			<Recomended />
 			<div className='container'>
 				<Titles size='1xl' subtitle='Выберите опции для расширенного поиска'>
 					Расширенный поиск

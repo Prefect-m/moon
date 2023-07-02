@@ -4,4 +4,8 @@ export interface IPlayerProps {
 	autoPlay?: boolean
 	poster?: string
 	movieName?: string
+	controls?: boolean
+	loop?: boolean
+	full?: boolean
+	screenHandler?: (value: boolean) => void
 }

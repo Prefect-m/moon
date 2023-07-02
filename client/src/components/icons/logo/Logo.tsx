@@ -1,10 +1,13 @@
 import { FC } from 'react'
 
-export const Logo: FC = (): JSX.Element => {
+export const Logo: FC<{ width?: number; height?: number }> = ({
+	width = 121,
+	height = 28,
+}): JSX.Element => {
 	return (
 		<svg
-			width='121'
-			height='28'
+			width={width}
+			height={height}
 			viewBox='0 0 121 28'
 			fill='none'
 			xmlns='http://www.w3.org/2000/svg'

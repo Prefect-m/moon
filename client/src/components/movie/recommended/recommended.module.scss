@@ -1,0 +1,150 @@
+@import '../../../styles/mixin';
+@import '../../../styles/_vars';
+.recommended {
+	position: relative;
+	padding: 50px 0;
+	overflow: hidden;
+
+	&_overlay {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background: $mainBlack;
+		height: 100vh;
+		overflow: hidden;
+	}
+	&_poster {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 2;
+	}
+
+	&_player {
+		position: absolute;
+		top: -15%;
+		left: 0;
+		width: 100%;
+		bottom: -20%;
+	}
+}
+.shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-moz-box-shadow: inset 700px 150px 250px $mainBlack;
+	-webkit-box-shadow: inset 700px 150px 250px $mainBlack;
+	box-shadow: inset 700px 150px 250px $mainBlack;
+	z-index: 2;
+	pointer-events: none;
+	&_right {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		-moz-box-shadow: inset -340px 40px 250px $mainBlack;
+		-webkit-box-shadow: inset -340px 40px 250px $mainBlack;
+		box-shadow: inset -340px 40px 250px $mainBlack;
+		z-index: 2;
+		pointer-events: none;
+	}
+}
+.content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+	padding: 50px 0;
+	color: $white;
+	&_wrap {
+		@include container;
+		display: flex;
+		align-items: center;
+		gap: 38px;
+		width: 100%;
+		height: 100%;
+	}
+	&_poster {
+		max-width: calc(224px - 10px);
+		width: 100%;
+		height: 320px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	&_description {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		max-width: 60%;
+		width: 100%;
+	}
+	&_name {
+		display: flex;
+		align-items: center;
+		gap: 40px;
+		& h1 {
+			font-size: 50px;
+			font-weight: bold;
+			background-image: linear-gradient(180deg, $white, #868686);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-moz-background-clip: text;
+			-moz-text-fill-color: transparent;
+			background-size: 100%;
+			background-repeat: repeat;
+			height: 2.9rem;
+			margin-left: -4px;
+		}
+	}
+	&_subtitle {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		font-size: 12px;
+		font-weight: 300;
+		color: $grey;
+	}
+	&_original {
+		font-size: 18px;
+		font-weight: 300;
+		color: $grey-extended;
+	}
+	&_text {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 18px;
+	}
+	&_buttons {
+		position: absolute;
+		right: 10%;
+		bottom: 30%;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		& button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 16px;
+			background: $mainBlack;
+			border-radius: 50%;
+			box-shadow: 2px 4px 14px 3px rgba(0, 0, 0, 0.55);
+			cursor: pointer;
+			transition: transform 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			&:hover {
+				transform: scale(1.12);
+			}
+		}
+	}
+}

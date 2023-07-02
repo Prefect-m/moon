@@ -2,7 +2,6 @@ import { FC, useEffect, useRef, useState } from 'react'
 import styles from './player.module.scss'
 import { Controlls, Spinner } from '@/components'
 import { IPlayerProps } from './Player.props'
-import { useScreen } from '@/hooks'
 
 export const Player: FC<IPlayerProps> = ({
 	src,
@@ -10,6 +9,10 @@ export const Player: FC<IPlayerProps> = ({
 	movieName,
 	muted,
 	poster,
+	controls = true,
+	full,
+	loop,
+	screenHandler,
 }) => {
 	const [isPlaying, setIsPlaying] = useState(false)
 	const [isWaiting, setIsWaiting] = useState(false)
@@ -27,15 +30,30 @@ export const Player: FC<IPlayerProps> = ({
 	const volumeRef = useRef<HTMLInputElement>(null)
 	const videoApi = videoRef.current
 
-	const { isActive } = useScreen()
-
 	useEffect(() => {
-		if (load) {
-			setTimeout(() => {
-				setLoad(false)
-			}, 2300)
+		if (!videoRef.current) return
+		if (!playerRef.current) return
+		if (full) {
+			fullScreenHandler()
 		}
-	}, [])
+
+		if (autoPlay) {
+			videoApi?.play()
+		} else {
+			videoApi?.pause()
+		}
+
+		const handler = () => {
+			if (document.fullscreenElement && document.fullscreenElement !== null) {
+				screenHandler(false)
+			}
+		}
+		document.addEventListener('fullscreenchange', handler)
+
+		return () => {
+			document.removeEventListener('fullscreenchange', handler)
+		}
+	}, [autoPlay, full])
 
 	const onPlay = () => {
 		if (isWaiting) setIsWaiting(false)
@@ -112,6 +130,7 @@ export const Player: FC<IPlayerProps> = ({
 			})
 		} else {
 			document.exitFullscreen()
+			screenHandler(false)
 		}
 	}
 
@@ -172,26 +191,27 @@ export const Player: FC<IPlayerProps> = ({
 					onDoubleClick={rewindRight}
 				></div>
 			</div>
-			{load ? (
+			{/* {load ? (
 				<div className={styles.player_loader}>
 					<Spinner />
 				</div>
 			) : (
-				<video
-					muted={muted}
-					autoPlay={autoPlay}
-					ref={videoRef}
-					src={src}
-					onClick={playPauseHandler}
-					onPlaying={loadedMetaData}
-					onProgress={onProgress}
-					onPlay={onPlay}
-					onPlayingCapture={onPlay}
-					onTimeUpdate={onTimeUpdate}
-					onPause={onPause}
-					onWaiting={onWaiting}
-				></video>
-			)}
+				
+			)} */}
+			<video
+				muted={muted}
+				loop={loop}
+				ref={videoRef}
+				src={src}
+				onClick={playPauseHandler}
+				onPlaying={loadedMetaData}
+				onProgress={onProgress}
+				onPlay={onPlay}
+				onPlayingCapture={onPlay}
+				onTimeUpdate={onTimeUpdate}
+				onPause={onPause}
+				onWaiting={onWaiting}
+			></video>
 			<div className={styles.player_controls}>
 				<Controlls
 					bufferRef={bufferRef}
